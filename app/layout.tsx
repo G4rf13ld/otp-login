@@ -27,7 +27,7 @@ export default function RootLayout({
     <SessionProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased dark h-dvh w-dvw flex justify-center pt-24`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased h-dvh w-dvw flex justify-center pt-24`}
         >
           {children}
         </body>

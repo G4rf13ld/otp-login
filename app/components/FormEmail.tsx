@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { emailSchema } from "../lib/validation";
 import { loginUserWithCredentials } from "../actions/actions";
+import axios from "axios";
 
 interface Inputs {
   email: string;
@@ -18,13 +19,17 @@ const FormEmail = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+  const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     const validatedData = emailSchema.safeParse(formData);
     console.log(validatedData);
 
-    if (validatedData.success) {
-      loginUserWithCredentials(validatedData.data);
-    }
+    // if (validatedData.success) {
+    //   loginUserWithCredentials(validatedData.data);
+
+    // }
+
+    // call API -> api calls signIn() -> return user/session
+    const user = await axios.post("/api/login", validatedData.data);
   };
 
   return (

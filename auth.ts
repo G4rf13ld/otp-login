@@ -44,9 +44,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     },
   },
 
-  pages: {
-    signIn: "/",
-  },
+  // pages: {
+  //   signIn: "/",
+  // },
 
   secret: process.env.AUTH_SECRET,
 });

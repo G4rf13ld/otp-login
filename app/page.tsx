@@ -9,6 +9,8 @@ import CreateUserByEmail from "./components/CreateUserByEmail";
 export default async function page() {
   const session = await auth();
 
+  console.log(session);
+
   return (
     <div className="flex flex-col gap-8 min-w-[400px] w-1/3">
       <Heading title={"OTP Login"} />
